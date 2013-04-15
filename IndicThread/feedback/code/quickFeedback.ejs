@@ -1,0 +1,46 @@
+<div id="modal-quickFeedback" class="modal hide" style='width: auto;'>
+  <div class="modal-header">
+    <a data-dismiss="modal" class="close">&times;</a>
+    <h3 id='quickFeedback-header'>Write to us</h3>
+  </div>
+  <div class="label hide" id="quickfeedback-server-error"></div>
+  <div class='modal-body'>
+    <div id='feedbackForm'>
+      <form id='quickFeedback-form'>
+        <div id="feedBack-div" class='control-group'>
+          <label class="control-label" for="feedbackText">
+            Got a question? Comment? Suggestion?
+            Leave it here...
+          </label>
+          <div class="controls">
+            <textarea id="feedbackText" title="Your Query or Suggestion" name="feedbackText" class="span6" rows="4"></textarea>
+            <span id="feedbackText-error" class="help-inline" style="display:block"></span>
+          </div>
+        </div>
+        <div id="feedbackEmail-div" class="control-group">
+          <label class="control-label" for="feedbackEmail">
+            ...and we'll get back to you via email</label>
+          <div class="controls input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span>
+            <input id="feedbackEmail" name="feedbackEmail" type="text" class=" focused" title="Your Email Address" value=<% if(session.user) { %>"<%= session.user.email %>"<% } else { %> "" <% } %>placeholder="Your email (Required)" style='width: 421px;'>
+            <span id="feedbackEmail-error" class="help-inline" style="display:block"></span>
+          </div>
+        </div>
+        <div>
+          <button id="feedbackMsg-button" class="btn btn-primary" type='button' title="Send Email">Send</button>
+        </div>
+      </form>
+    </div>
+
+    <div id='thankYouMsg' class='hide'>
+      <p class='extra-margin'>
+        Thanks a lot for writing in!<br/>
+        We will act on your note as soon as we can.
+      </p>
+      <!-- <div style="margin-left:140px;">
+        <button id="thankyouMsg-button" class="btn btn-primary" title="Close" data-dismiss='modal'>Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script src="/js/user/quickFeedback.js" type="text/javascript"></script>
